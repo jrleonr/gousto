@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+//api/recipe/type/asian
+Route::get('recipe/type/{value}', 'RecipeController@getRecipesByCuisine');
+
+Route::resource('recipe', 'RecipeController');
+
+
